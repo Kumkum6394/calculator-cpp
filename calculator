@@ -1,51 +1,307 @@
-Calculator Functions in C++
-This calculator includes a range of mathematical functions to handle various operations:
+#include <iostream>
+using namespace std;
+/* case 1*/ void add(double a, double b)
+{
+    cout << "the sum is " << a + b << endl;
+}
+/* case 2*/ void sub(double a, double b)
+{
+    cout << "the subtraction is " << a - b << endl;
+}
+/* case 3*/ void mul(double a, double b)
+{
 
-Addition
-Compute the sum of two numbers.
+    cout << "the multipication is " << a * b << endl;
+}
+/* case 4*/ void div(double a, double b)
+{
 
-Subtraction
-Find the difference between two numbers.
+    cout << "the division is " << a / b << endl;
+}
+/* case 5*/ double log(float b)
+{
+    float c;
+    float term1 = (b - 1) / (b + 1);
+    float term2 = term1 * term1;
+    float term3 = term2 * term1;
+    float term4 = term3 * term1;
+    float term5 = term4 * term1;
+    float term7 = term5 * term2;
+    float term9 = term7 * term2;
+    float term11 = term7 * term2;
+    float term13 = term11 * term2;
+    float term15 = term13 * term2;
+    c = 2 * (term1 + (1.0 / 3.0) * term2 + (1.0 / 5.0) * term5 + (1.0 / 7.0) * term7 + (1.0 / 9.0) * term9 + (1.0 / 11.0) * term11 + (1.0 / 13.0) * term13 + (1.0 / 15.0) * term15);
+    return c;
+}
+/* case 6*/ float sin(int c)
+{
+    float a, b, term1, term2, term3, term4, term5, term6;
+    a = c % 360;
+    a = a * 3.14159 / 180;
+    term1 = a;
+    term2 = (a * a * a) / (3 * 2);
+    term3 = (a * a * a * a * a) / (5 * 4 * 3 * 2);
+    term4 = (a * a * a * a * a * a * a) / (7 * 6 * 5 * 4 * 3 * 2 * 1);
+    term5 = (a * a * a * a * a * a * a * a * a) / (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1);
+    term6 = (a * a * a * a * a * a * a * a * a * a * a) / (11 * 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1);
+    b = term1 - term2 + term3 - term4 + term5 - term6;
+    return b;
+}
+/* case 7*/ float cos(int c)
+{
+    float a, b, term1, term2, term3, term4, term5, term6;
+    a = c % 360;
+    a = a * 3.14159 / 180;
+    term1 = 1;
+    term2 = (a * a) / (2);
+    term3 = (a * a * a * a) / (4 * 3 * 2);
+    term4 = (a * a * a * a * a * a) / (6 * 5 * 4 * 3 * 2 * 1);
+    term5 = (a * a * a * a * a * a * a * a) / (8 * 7 * 6 * 5 * 4 * 3 * 2 * 1);
+    term6 = (a * a * a * a * a * a * a * a * a * a) / (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1);
+    b = term1 - term2 + term3 - term4 + term5 - term6;
+    return b;
+}
+/* case 8*/ float tan(double a)
+{
+    float d;
+    d = sin(a) / cos(a);
+    return d;
+}
+/* case 9*/ float sec(double a)
+{
+    double d;
+    d = 1 / cos(a);
+    return d;
+}
+/* case 10*/ float cosec(double a)
+{
+    double d;
+    d = 1 / sin(a);
+    return d;
+}
+/* case 11*/ float cot(double a)
+{
+    double d;
+    d = 1 / tan(a);
+    return d;
+}
+/* case 12*/ float exp(double a)
+{
+    float d, t2, t3, t4, t5, t6, t7, t8;
+    t2 = a;
+    t3 = (a * a) / 2;
+    t4 = (a * a * a) / (3 * 2);
+    t5 = (a * a * a * a) / (4 * 3 * 2);
+    t6 = (a * a * a * a * a) / (5 * 4 * 3 * 2);
+    t7 = (a * a * a * a * a * a) / (6 * 5 * 4 * 3 * 2);
+    t8 = (a * a * a * a * a * a * a) / (7 * 6 * 5 * 4 * 3 * 2);
+    d = 1 + t2 + t3 + t4 + t5 + t6 + t7 + t8;
+    return d;
+}
+/* case 13*/ float sqrt(double a)
+{
+       float  d,h;
+        for (int i = 1; i * i <= a; i++) {
+             d = i; 
+    }
+    h=d;
+    if(h*h==a){
+        d=h;
+        return d;
+    }
+    else;{
+       
+       d = log(a) / 2;
+       return exp(d);
+}
+    }
+/* case 14*/ float power(double a, double b)
+{
+    if (b == 0)
+        return 1;
+    if (b < 0)
+        return 0;
 
-Multiplication
-Multiply two numbers together.
+    float d = 1;
+    for (int i = 0; i < b; ++i)
+    {
+        d *= a;
+    }
+    return d;
+}
+/* case 15*/ void quad(double a, double b, double c)
+{
+    double e, f, g;
+    g = b * b - 4 * a * c;
 
-Division
-Divide one number by another.
+    if (g < 0) {
+        cout << "The roots are imaginary" << endl;
+    } else if (g == 0) {
+        cout << "The roots are similar and are: " << -b / (2 * a) << endl;
+    } else {
+        e = (-b + sqrt(g)) / (2 * a);
+        f = (-b - sqrt(g)) / (2 * a);
+        cout << "The roots are: " << e << " and " << f << endl;
+    }
+   
+}
+/* case 16*/ void lneq(double a, double b, double c, double d, double e, double f)
+{
+    double g, h;
+    g = (b * f - e * c) / (e * a - b * d);
+    h = (c * d - f * a) / (e * a - b * d);
+    cout << "the value of roots are " << g << " , " << h << endl;
+}
 
-Logarithm
-Calculate the logarithm of a number.
-
-Sine
-Compute the sine of an angle (in degree).
-
-Cosine
-Compute the cosine of an angle (in degree).
-
-Tangent
-Compute the tangent of an angle (in degree).
-
-Secant
-Compute the secant of an angle (in degree).
-
-Cosecant
-Compute the cosecant of an angle (in degree).
-
-Cotangent
-Compute the cotangent of an angle (in degree).
-
-Exponential Function (exp(x))
-Compute the exponential of a number.
-
-Square Root
-Find the square root of a number.
-
-Power
-Raise a number to a specified power.
-
-Quadratic Equation
-Solve quadratic equations of the form ax² + bx + c = 0.
-
-Linear Equation in Two Variables
-Solve systems of linear equations with two variables.
+int main()
+{
+    int a;
+    double b, c, d, e, g, f;
+    cout << "type  the number what you want to do " << endl
+         << "1-addition " << endl
+         << "2-sutraction " << endl
+         << "3-multipication " << endl
+         << "4-divide " << endl
+         << "5-log " << endl
+         << "6-sin " << endl
+         << "7-cos" << endl
+         << "8-tan " << endl
+         << "9-sec" << endl
+         << "10-cosec" << endl
+         << "11-cot" << endl
+         << "12-exp(x)" << endl
+         << "13-square root " << endl
+         << "14-power" << endl
+         << "15-quadratic equation" << endl
+         << "16-linear equation in two variables" << endl;
+    cin >> a;
+    switch (a)
+    {
+    case 1:
+        a == 1;
+        cout << "enter first number" << endl;
+        cin >> c;
+        cout << "enter second number" << endl;
+        cin >> b;
+        add(c, b);
+        break;
+    case 2:
+        a == 2;
+        cout << "enter first number" << endl;
+        cin >> c;
+        cout << "enter second number" << endl;
+        cin >> b;
+        sub(c, b);
+        break;
+    case 3:
+        a == 3;
+        cout << "enter first number" << endl;
+        cin >> c;
+        cout << "enter second number" << endl;
+        cin >> b;
+        mul(c, b);
+        break;
+    case 4:
+        a == 4;
+        cout << "enter first number" << endl;
+        cin >> c;
+        cout << "enter second number" << endl;
+        cin >> b;
+        div(c, b);
+        break;
+    case 5:
+        a == 5;
+        cout << "enter the number for  natural logarithm " << endl;
+        cin >> b;
+        cout << "the  natural logarithm of " << b << " is " << log(b) << endl;
+        break;
+    case 6:
+        a == 6;
+        cout << "enter the angle for sin in degrees " << endl;
+        cin >> b;
+        cout << "the sin of " << b << " is " << sin(b) << endl;
+        break;
+    case 7:
+        a == 7;
+        cout << "enter the angle for cos in degrees " << endl;
+        cin >> b;
+        cout << "the cosine of " << b << " is " << cos(b) << endl;
+        break;
+    case 8:
+        a == 8;
+        cout << "enter the angle for tan in degrees " << endl;
+        cin >> b;
+        cout << "the tan of " << b << " is " << tan(b) << endl;
+        break;
+    case 9:
+        a == 9;
+        cout << "enter the angle for sec in degrees " << endl;
+        cin >> b;
+        cout << "the sec of " << b << " is " << sec(b) << endl;
+        break;
+    case 10:
+        a == 10;
+        cout << "enter the angle for cosec in degrees " << endl;
+        cin >> b;
+        cout << "the cosec of " << b << " is " << cosec(b) << endl;
+        break;
+    case 11:
+        a == 11;
+        cout << "enter the angle for cot in degrees " << endl;
+        cin >> b;
+        cout << "the cot of " << b << " is " << cot(b) << endl;
+        break;
+    case 12:
+        a == 12;
+        cout << "enter the angle for exp(x) in degrees" << endl;
+        cin >> b;
+        cout << "the exp(x) of " << b << " is " << exp(b) << endl;
+        break;
+    case 13:
+        a == 13;
+        cout << "enter the number for square root " << endl;
+        cin >> b;
+        cout << "the square root of " << b << " is " << sqrt(b) << endl;
+        break;
+    case 14:
+        a == 14;
+        cout << "enter the number for base " << endl;
+        cin >> b;
+        cout << "enter the number for power " << endl;
+        cin >> c;
+        cout << "the power of " << b << " is " << power(b, c) << endl;
+        break;
+    case 15:
+        a == 15;
+        cout << "enter the number for coefficient of x^2 " << endl;
+        cin >> b;
+        cout << "enter the number for coefficient of x " << endl;
+        cin >> c;
+        cout << "enter the number for constant " << endl;
+        cin >> d;
+        quad(b, c, d);
+        break;
+    case 16:
+        a == 16;
+        cout << "enter the coefficient of first variable in first equation " << endl;
+        cin >> b;
+        cout << "enter the coefficient of second variable in first equation " << endl;
+        cin >> c;
+        cout << "enter the constant term of first equation " << endl;
+        cin >> d;
+        cout << "enter the coefficient of first variable in second equation " << endl;
+        cin >> e;
+        cout << "enter the coefficient of second variable in second equation " << endl;
+        cin >> f;
+        cout << "enter the constant term of second equation " << endl;
+        cin >> g;
+        lneq(b, c, d, e, f, g);
+        break;
+    default:
+        cout << "please choose correct case " << endl;
+        break;
+    }
+    return 0;
+}
 
