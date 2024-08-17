@@ -1,0 +1,51 @@
+Calculator Functions in C++
+This calculator includes a range of mathematical functions to handle various operations:
+
+Addition
+Compute the sum of two numbers.
+
+Subtraction
+Find the difference between two numbers.
+
+Multiplication
+Multiply two numbers together.
+
+Division
+Divide one number by another.
+
+Logarithm
+Calculate the logarithm of a number.
+
+Sine
+Compute the sine of an angle (in degree).
+
+Cosine
+Compute the cosine of an angle (in degree).
+
+Tangent
+Compute the tangent of an angle (in degree).
+
+Secant
+Compute the secant of an angle (in degree).
+
+Cosecant
+Compute the cosecant of an angle (in degree).
+
+Cotangent
+Compute the cotangent of an angle (in degree).
+
+Exponential Function (exp(x))
+Compute the exponential of a number.
+
+Square Root
+Find the square root of a number.
+
+Power
+Raise a number to a specified power.
+
+Quadratic Equation
+Solve quadratic equations of the form ax² + bx + c = 0.
+
+Linear Equation in Two Variables
+Solve systems of linear equations with two variables.
+
