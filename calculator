@@ -67,7 +67,7 @@ using namespace std;
     b = term1 - term2 + term3 - term4 + term5 - term6;
     return b;
 }
-/* case 8*/ float tan(double a)
+/* case 8*/ float tan(int a)
 {
     float e;
     e=a%180;
@@ -80,7 +80,7 @@ using namespace std;
     return d;
    }
 }
-/* case 9*/ float sec(double a)
+/* case 9*/ float sec(int a)
 {
     double d,e;
      e=a%360;
@@ -92,7 +92,7 @@ using namespace std;
     return d;
      }
 }
-/* case 10*/ float cosec(double a)
+/* case 10*/ float cosec(int a)
 {
     double d,e;
     e=a%360;
@@ -104,7 +104,7 @@ using namespace std;
     return d;
     }
 }
-/* case 11*/ float cot(double a)
+/* case 11*/ float cot(int a)
 {
     double d,e;
     e=a%180;
