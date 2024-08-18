@@ -67,54 +67,29 @@ using namespace std;
     b = term1 - term2 + term3 - term4 + term5 - term6;
     return b;
 }
-/* case 8*/ float tan(int a)
+/* case 8*/ float tan(double a)
 {
-    float e;
-    e=a%180;
-    if(e==90){
-    cout<<"tan is undefined"<<endl;
-     }
-    else{
     float d;
     d = sin(a) / cos(a);
     return d;
-   }
 }
-/* case 9*/ float sec(int a)
+/* case 9*/ float sec(double a)
 {
-    double d,e;
-     e=a%360;
-    if (e==90){
-     cout<<"the sec is undefined"<<endl;
-       }
-    else{
+    double d;
     d = 1 / cos(a);
     return d;
-     }
 }
-/* case 10*/ float cosec(int a)
+/* case 10*/ float cosec(double a)
 {
-    double d,e;
-    e=a%360;
-    if (e==0){
-    cout<<"the cosec is undefined"<<endl;
-    }
-    else{
+    double d;
     d = 1 / sin(a);
     return d;
-    }
 }
-/* case 11*/ float cot(int a)
+/* case 11*/ float cot(double a)
 {
-    double d,e;
-    e=a%180;
-    if (e==0){
-     cout<<"the cot is undefined"<<endl;
-     }
-     else{
+    double d;
     d = 1 / tan(a);
     return d;
-   }
 }
 /* case 12*/ float exp(double a)
 {
@@ -186,7 +161,7 @@ using namespace std;
 
 int main()
 {
-    int a;
+    int a,h,j;
     double b, c, d, e, g, f;
     cout << "type  the number what you want to do " << endl
          << "1-addition " << endl
@@ -266,26 +241,50 @@ int main()
     case 8:
         a == 8;
         cout << "enter the angle for tan in degrees " << endl;
-        cin >> b;
-        cout << "the tan of " << b << " is " << tan(b) << endl;
+        cin >> j;
+        h=j%180;
+        if(h==90){
+            cout<<"the sec is undefined "<<endl;
+        }
+        else{
+        cout << "the tan of " << j << " is " << tan(j) << endl;
+        }
         break;
     case 9:
         a == 9;
         cout << "enter the angle for sec in degrees " << endl;
-        cin >> b;
-        cout << "the sec of " << b << " is " << sec(b) << endl;
+        cin >> j;
+        h=j%360;
+        if(h==90){
+            cout<<"the sec is undefined "<<endl;
+        }
+        else{
+        cout << "the sec of " << j << " is " << sec(j) << endl;
+        }
         break;
     case 10:
         a == 10;
         cout << "enter the angle for cosec in degrees " << endl;
-        cin >> b;
-        cout << "the cosec of " << b << " is " << cosec(b) << endl;
+        cin >> j;
+        h=j%360;
+        if(h==0){
+            cout<<"the cosec is undefined "<<endl;
+        }
+        else{
+        cout << "the cosec of " << j << " is " << cosec(j) << endl;
+        }
         break;
     case 11:
         a == 11;
         cout << "enter the angle for cot in degrees " << endl;
-        cin >> b;
-        cout << "the cot of " << b << " is " << cot(b) << endl;
+        cin >> j;
+        h=j%180;
+        if(h==0){
+            cout<<"the cot is undefined"<<endl;
+        }
+        else{
+        cout << "the cot of " << j << " is " << cot(j) << endl;
+        }
         break;
     case 12:
         a == 12;
