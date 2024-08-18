@@ -69,27 +69,52 @@ using namespace std;
 }
 /* case 8*/ float tan(double a)
 {
+    float e;
+    e=a%180;
+    if(e==90){
+    cout<<"tan is undefined"<<endl;
+     }
+    else{
     float d;
     d = sin(a) / cos(a);
     return d;
+   }
 }
 /* case 9*/ float sec(double a)
 {
-    double d;
+    double d,e;
+     e=a%360;
+    if (e==90){
+     cout<<"the sec is undefined"<<endl;
+       }
+    else{
     d = 1 / cos(a);
     return d;
+     }
 }
 /* case 10*/ float cosec(double a)
 {
-    double d;
+    double d,e;
+    e=a%360;
+    if (e==0){
+    cout<<"the cosec is undefined"<<endl;
+    }
+    else{
     d = 1 / sin(a);
     return d;
+    }
 }
 /* case 11*/ float cot(double a)
 {
-    double d;
+    double d,e;
+    e=a%180;
+    if (e==0){
+     cout<<"the cot is undefined"<<endl;
+     }
+     else{
     d = 1 / tan(a);
     return d;
+   }
 }
 /* case 12*/ float exp(double a)
 {
